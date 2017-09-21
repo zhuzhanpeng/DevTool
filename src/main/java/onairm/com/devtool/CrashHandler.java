@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.os.Looper;
 import android.util.Log;
 import android.view.WindowManager;
 
@@ -98,14 +99,14 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         // 3.把错误的堆栈信息 获取出来
         String errorinfo = getErrorInfo(ex);
         Log.e(TAG, "handleException:"+errorinfo);
-        /*new Thread() {
+        new Thread() {
             @Override
             public void run() {
                 Looper.prepare();
                 showDialog(mContext, getErrorInfo(ex));
                 Looper.loop();
             }
-        }.start();*/
+        }.start();
         sbs.append(errorinfo);
 
         return true;
