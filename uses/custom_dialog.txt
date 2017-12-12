@@ -1,0 +1,19 @@
+xmlns:app="http://schemas.android.com/apk/res-auto"
+
+final CustomDialog cancelDialog = new CustomDialog.Builder(this)
+                .setMessage("是否能运行")
+                .setNegativeButton("取消", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                })
+                .setPositiveButton("确定", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                })
+                .createTwoButtonDialog();
+        cancelDialog.show();
+
