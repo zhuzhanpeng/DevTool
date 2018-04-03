@@ -1,0 +1,20 @@
+@startuml
+title Gson设计模式
+Class Gson{
+ factories:List<TypeAdapterFactory>
+ fromJson(String):Object
+ toJson(Object):String
+}
+interface TypeAdapter{
+    --read()--
+    --write()--
+}
+
+interface TypeAdapterFactory{
+ create(Gson gson, TypeToken<T> type) : <T> TypeAdapter<T>
+
+}
+TypeAdapter <.. TypeAdapterFactory
+Gson "1..*" *--> TypeAdapterFactory
+
+@enduml

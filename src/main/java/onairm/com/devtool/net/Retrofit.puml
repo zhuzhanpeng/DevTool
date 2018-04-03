@@ -1,0 +1,30 @@
+@startuml
+class Retrofit{
+    engine : okhttp3_Call_Factory
+    jsonToInstance : Converter_Factory
+    handlerThread : CallAdapter_Factory
+    serviceMethodCache : Map<Method, ServiceMethod<?, ?>>
+}
+
+interface okhttp3_Call_Factory{
+}
+interface Converter_Factory{
+}
+
+interface CallAdapter_Factory{
+
+}
+class OkHttpClient{
+
+}
+note left of okhttp3_Call_Factory:发起网络请求的引擎
+note top of Converter_Factory:json转换成对象
+note right of CallAdapter_Factory:线程切换
+note top of ServiceMethod:目前没看出是什么意思
+
+Retrofit o--> okhttp3_Call_Factory
+Retrofit o--> Converter_Factory
+Retrofit o--> CallAdapter_Factory
+okhttp3_Call_Factory<|..OkHttpClient
+
+@enduml
