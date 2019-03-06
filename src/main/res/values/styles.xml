@@ -19,7 +19,7 @@
         <attr name="f_normal_txt_color" format="color"/>
         <attr name="f_focus_txt_color" format="color"/>
     </declare-styleable>
-    <style name="dialog_style">
+    <style name="dialog_style" parent="Theme.AppCompat.Light.NoActionBar">
        <item name="android:layout_width">@dimen/w_191</item>
         <item name="android:layout_height">@dimen/h_76</item>
         <item name="android:textSize">@dimen/w_33</item>

@@ -1,5 +1,6 @@
 @startuml
-title Gson设计模式
+scale 600*600
+title Gson源码 策略模式+工厂方法模式
 Class Gson{
  factories:List<TypeAdapterFactory>
  fromJson(String):Object
